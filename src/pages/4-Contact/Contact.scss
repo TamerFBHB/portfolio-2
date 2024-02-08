@@ -1,0 +1,30 @@
+@use '../../SASS/Main' as *;
+
+
+
+
+.contact{
+    position: absolute;
+    @include size(100%, 85vh);
+    background-color: var(--bg-pages);
+    color: var(--text);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform-origin: left bottom;
+    transition: 1s;
+    left: 0;
+    z-index: 3;
+    
+    @include screen(lg){        
+        position: relative;
+        width: 90%;
+        min-height: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    @include screen(xsm){
+        @include size(100% , 100dvh);
+        opacity: 0.95;        
+    }
+}
+

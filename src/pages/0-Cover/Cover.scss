@@ -1,0 +1,21 @@
+@use '../../SASS/Main' as * ;
+
+
+.page-cover{
+    @include size(420px , 100%);
+    margin-left: 5px;
+    border-radius: 12px;
+    background-color: var(--bg-pages);
+    color: var(--text);
+    transition: 1s;
+
+    @include screen(lg){        
+        @include size(90% , 100%);
+        border-radius: 0px;
+        margin-left: 0px;
+    }
+    @include screen(xsm){
+        @include size(100% , 100dvh);
+        opacity: 0.95;        
+    }
+}

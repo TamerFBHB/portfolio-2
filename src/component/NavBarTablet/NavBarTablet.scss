@@ -1,0 +1,91 @@
+@use "../../SASS/Main" as * ;
+
+
+.BarTablet{
+    position: fixed;
+    left: 75px ;
+    @include size(75px,  90vh);    
+    margin-top: 2.5%;
+    align-self: start;
+    z-index: 6;
+    display: none;
+
+    @include screen(lg){       
+        display: block;
+    }
+    @include screen(xsm){  
+        @include size(75px,  90vh);    
+        left: 0;   
+        transform: translateX(-80px);
+        transition: 0.5s;
+    }
+}
+
+.see{
+    transform: translateX(0px);
+}
+.sideBar-above{
+    @include size(100% , 25%);
+    background-color: white;
+    @include flex-col(center,center) ;
+    gap:10px;
+    border-radius: 10px;
+    padding: 0;
+}
+.sideBar-above .change{
+    font-size: 30px;
+    transition: 0.3s;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+        color : red;
+        background-color: yellow;
+    }
+}
+
+
+//sideBar-down
+.sideBar-down{
+    margin-top: 8px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.sideBar-down .links a{
+    @include flex-col(center,center) ;
+    gap: 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: 0.3s;
+    padding: 20px ;
+& .nav-icon{
+    font-size: 18px
+}
+&:hover {
+    color : red;
+    background-color: yellow;
+}
+}
+
+.sideBar-down .links a:not(:last-child) {  
+    @include border-bottom-gradient(1px,transparent, var(--border-link),transparent);  
+}
+
+/*========================
+    to change color of button
+=========================*/
+.active{
+    color : red;
+    background-color: yellow;
+}
+.noActive{
+    color : black;
+    background-color: white;
+}
+
+
+
+
+
